@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-DRIVER_LOCAL_PATH = "C:\\Users\\comte\\Downloads\\chromedriver.exe"
+DRIVER_LOCAL_PATH = "/workspaces/Automate-Everything-with-Python/I - Browser Automation and Web Scraping/chromedriver.exe"
 service = Service(DRIVER_LOCAL_PATH)
 
 #----------------------------FUNCTIONS----------------------------
