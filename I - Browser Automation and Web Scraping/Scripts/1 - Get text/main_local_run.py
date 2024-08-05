@@ -45,12 +45,12 @@ def handle_url_error(url_error: str) -> str:
 #----------------------------MAIN----------------------------
 def main():
     # URLs to scrape
-    URL_to_scrape = ["https://www.scrapethissite.com/pages/simple/"]
+    URL_to_scrape = ["http://automated.pythonanywhere.com"]
 
     # Get driver
     for url in URL_to_scrape:
         driver = get_driver(url)
-        element = driver.find_element(by="xpath", value="/html/body/div/section/div/div[1]/div/h1")
+        element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]")
     print(element.text)
     
     #Keep browser open
