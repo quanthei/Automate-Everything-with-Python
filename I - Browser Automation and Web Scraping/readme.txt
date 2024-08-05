@@ -14,8 +14,7 @@ II - How to run the script?
             4. Adapt the code (i.e. script in 'scripts' folder)
     
     2. Install dependancies
-
-    In the bash terminal :
-    pip install pytest
-    pip install selenium
     
+    In the bash terminal :
+        pip install pytest
+        pip install selenium
