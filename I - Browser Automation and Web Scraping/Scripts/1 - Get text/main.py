@@ -41,6 +41,14 @@ def handle_url_error(url_error: str) -> str:
 
 #----------------------------MAIN----------------------------
 def main():
+    # URLs to scrape
+    URL_to_scrape = ["https://www.scrapethissite.com/pages/simple/"]
 
+    # Get driver
+    for url in URL_to_scrape:
+        driver = get_driver(url, True)
+        element = driver.find_element(by="xpath", value="/html/body/div/section/div/div[1]/div/h1")
+    print(element.text)
 
 #----------------------------EXE----------------------------
+main()
