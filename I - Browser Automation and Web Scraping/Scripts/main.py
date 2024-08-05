@@ -1,6 +1,8 @@
 from selenium import webdriver
 
-def set_webdriver(to_keep_alive: bool = False):
+#----------------------------FUNCTIONS----------------------------
+
+def get_driver(url_to_get: str, to_keep_alive: bool = False):
     # Parametrization of the Webdriver
 
     #Options
@@ -17,7 +19,14 @@ def set_webdriver(to_keep_alive: bool = False):
     # Services // None for now
     driver_services = webdriver.ChromeService()
 
-    # Run Webdriver
+    # Driver
     driver = webdriver.Chrome(driver_options, driver_services, to_keep_alive)
+    driver.get(url_to_get)
+
+    return driver
+
+#----------------------------MAIN----------------------------
+def main():
 
 
+#----------------------------EXE----------------------------
