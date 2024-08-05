@@ -5,7 +5,7 @@ DRIVER_LOCAL_PATH = "C:\\Users\\Thomas\\Desktop\\Formation Python\\Web scraping\
 service = Service(DRIVER_LOCAL_PATH)
 
 #----------------------------FUNCTIONS----------------------------  
-def get_driver(url_to_get: str, run_locally: bool = True, keep_alive_browser: bool = False):
+def get_driver(url_to_get: str, run_locally: bool = True):
     while True:
         # Handle empty URL
         if url_to_get == "": 
@@ -29,9 +29,9 @@ def get_driver(url_to_get: str, run_locally: bool = True, keep_alive_browser: bo
 
         # Attribute args to Webdriver
         if not run_locally: # run on an online IDE (replit for example)
-            driver = webdriver.Chrome(options=driver_options, keep_alive=keep_alive_browser)
+            driver = webdriver.Chrome(options=driver_options)
         else: # run a local IDE
-             driver = webdriver.Chrome(service=service, options=driver_options, keep_alive=keep_alive_browser)   
+             driver = webdriver.Chrome(service=service, options=driver_options)   
         # Run Webriver
         driver.get(url_to_get)
 
@@ -49,9 +49,18 @@ def main():
 
     # Get driver
     for url in URL_to_scrape:
-        driver = get_driver(url, keep_alive_browser= True)
+        driver = get_driver(url)
         element = driver.find_element(by="xpath", value="/html/body/div/section/div/div[1]/div/h1")
     print(element.text)
-
+    
+    #Keep browser open
+    while True:
+        quit_browser = input("Press 'q' to close the browser \n")
+        
+        if quit_browser.lower() == "q":
+            break
+        
+    print("End of scrapping process")
+    
 #----------------------------EXE----------------------------
 main()
