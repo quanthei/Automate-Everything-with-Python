@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-DRIVER_LOCAL_PATH = "/workspaces/Automate-Everything-with-Python/I - Browser Automation and Web Scraping/chromedriver.exe"
+DRIVER_LOCAL_PATH = "C:\\Users\\Thomas\\Desktop\\Formation Python\\Web scraping\\chromedriver.exe"
 service = Service(DRIVER_LOCAL_PATH)
 
-#----------------------------FUNCTIONS----------------------------
+#----------------------------FUNCTIONS----------------------------  
 def get_driver(url_to_get: str, run_locally: bool = True, keep_alive_browser: bool = False):
     while True:
         # Handle empty URL
@@ -55,4 +55,3 @@ def main():
 
 #----------------------------EXE----------------------------
 main()
-
